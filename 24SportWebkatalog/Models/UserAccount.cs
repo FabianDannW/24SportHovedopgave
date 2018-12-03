@@ -12,6 +12,7 @@ namespace _24SportWebkatalog.Models
 
         public int UserID { get; set; }
 
+
         [Required(ErrorMessage ="First Name is required")]
         public string firstname { get; set; }
 
