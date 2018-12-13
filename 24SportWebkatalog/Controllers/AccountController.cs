@@ -13,9 +13,9 @@ namespace _24SportWebkatalog.Controllers
         // GET: Account
         public ActionResult Index()
         {
-            using (OurdbContext db = new OurdbContext())
+            using (Model1 db = new Model1())
             {
-                return View(db.userAccount.ToList());
+                return View(db.userinfoes.ToList());
             }
         }
         public ActionResult Register()
@@ -24,13 +24,13 @@ namespace _24SportWebkatalog.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(UserAccount account)
+        public ActionResult Register(userinfo account)
         {
             if (ModelState.IsValid)
             {
-                using (OurdbContext db = new OurdbContext())
+                using (Model1 db = new Model1())
                 {
-                    db.userAccount.Add(account);
+                    db.userinfoes.Add(account);
                     db.SaveChanges();
                 }
                 ModelState.Clear();
@@ -46,11 +46,11 @@ namespace _24SportWebkatalog.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(UserAccount user)
+        public ActionResult Login(userinfo user)
         {
-            using (OurdbContext db = new OurdbContext())
+            using (Model1 db = new Model1())
             {
-                var usr = db.userAccount.Where(u => u.Username == user.Username && u.Password == user.Password).FirstOrDefault();
+                var usr = db.userinfoes.Where(u => u.Username == user.Username && u.Password == user.Password).FirstOrDefault();
                 if (usr != null)
                 {
                     Session["UserID"] = usr.UserID.ToString();

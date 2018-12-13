@@ -1,4 +1,4 @@
-﻿@model IEnumerable<_24SportWebkatalog.Models.UserAccount>
+﻿@model IEnumerable<_24SportWebkatalog.Models.userinfo>
 
 @{
     ViewBag.Title = "Index";
@@ -7,10 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Opret ny bruger", "Register")
-</p>
-<p>
-    @Html.ActionLink("Log på", "Login")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -26,7 +23,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Username)
         </th>
-    
+       
         <th></th>
     </tr>
 
@@ -44,7 +41,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.Username)
         </td>
-    
+      
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
             @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
