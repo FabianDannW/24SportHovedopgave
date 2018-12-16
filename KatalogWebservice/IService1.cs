@@ -21,7 +21,7 @@ namespace KatalogWebservice
         [OperationContract]
         [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json,
             UriTemplate = "catalog?ItemId={ItemId}")]
-        int AddCatalogItem(CatalogItem catalogItem);
+        CatalogItem AddCatalogItem(CatalogItem catalogItem);    
 
 
 

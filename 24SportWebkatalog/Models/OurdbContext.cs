@@ -10,5 +10,8 @@ namespace _24SportWebkatalog.Models
     {
         public DbSet<UserAccount> userAccount { get; set; }
 
+        public DbSet <CatalogItem> catalogItems { get; set; }
+
+
     }
 }
