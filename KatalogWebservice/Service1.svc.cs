@@ -49,22 +49,24 @@ namespace KatalogWebservice
             string itemName = reader.GetString(1);
             string imgPath = reader.IsDBNull(2) ? null : reader.GetString(2);
             string description = reader.IsDBNull(3) ? null : reader.GetString(3);
+            double price = reader.GetDouble(4);
 
             CatalogItem catalogItem = new CatalogItem
             {
                 ItemId = itemId,
                 ItemName = itemName,
                 ImgPath = imgPath,
-                Description = description
+                Description = description,
+                Price = price
             };
             return catalogItem;
         }
 
 
-        public int AddCatalogItem(CatalogItem catalogItem)
+        public CatalogItem AddCatalogItem(CatalogItem catalogItem)
         {
             const string insertCatalogItem =
-                "insert into catalogItem (id, itemName, imgPath, description) values (@id, @itemName, @imgPath, @description)";
+                "insert into catalogItem (id, itemName, imgPath, description, price) values (@id, @itemName, @imgPath, @description, @price)";
 
             using (SqlConnection databaseConnection = new SqlConnection(ConnectionString))
             {
@@ -76,10 +78,9 @@ namespace KatalogWebservice
                     insertCommand.Parameters.AddWithValue("@itemName", catalogItem.ItemName);
                     insertCommand.Parameters.AddWithValue("@imgPath", catalogItem.ImgPath);
                     insertCommand.Parameters.AddWithValue("@description", catalogItem.Description);
+                    insertCommand.Parameters.AddWithValue("@price", catalogItem.Price);
 
-                    int rowsAffected = insertCommand.ExecuteNonQuery();
-
-                    return rowsAffected;
+                    return catalogItem;
 
                 }
             }
