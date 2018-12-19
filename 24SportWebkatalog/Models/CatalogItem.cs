@@ -8,7 +8,7 @@ namespace _24SportWebkatalog.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ItemId { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(500)]

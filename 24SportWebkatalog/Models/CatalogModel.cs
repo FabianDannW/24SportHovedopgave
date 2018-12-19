@@ -13,7 +13,7 @@ namespace _24SportWebkatalog.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CatalogItem>().Property(e => e.ItemId);
+            modelBuilder.Entity<CatalogItem>().Property(e => e.Id);
 
             modelBuilder.Entity<CatalogItem>().Property(e => e.ItemName).IsUnicode(false);
 

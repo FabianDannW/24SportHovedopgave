@@ -153,8 +153,6 @@
     <Compile Include="Models\CatalogItem.cs" />
     <Compile Include="Models\CatalogModel.cs" />
     <Compile Include="Models\Model1.cs" />
-    <Compile Include="Models\OurdbContext.cs" />
-    <Compile Include="Models\UserAccount.cs" />
     <Compile Include="Models\userinfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
