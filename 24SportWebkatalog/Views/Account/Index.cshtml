@@ -7,8 +7,13 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Opret ny bruger", "Register")
-    @Html.ActionLink("Log in", "Login")
+    <div class="col-md-10">
+    <a href="~/Account/Register" class="btn btn-default" role="button">Opret ny bruger  </a>
+    <a href="~/Account/Login" class="btn btn-default" role="button">Login  </a>
+    </div>
+
+
+
 </p>
 <table class="table">
     <tr>
@@ -44,9 +49,10 @@
         </td>
       
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserID })
+            @Html.ActionLink("Edit", "Edit", new { id = item.UserID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.UserID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.UserID})
+
         </td>
     </tr>
 }

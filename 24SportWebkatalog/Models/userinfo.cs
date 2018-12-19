@@ -13,28 +13,37 @@ namespace _24SportWebkatalog.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int UserID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Fornavn skal være udfyldt")]
+        [Display(Name = "Fornavn")]
         [StringLength(50)]
         public string firstname { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Efternavn skal være udfyldt")]
+        [Display(Name = "Efternavn")]
         [StringLength(50)]
         public string lastname { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Email skal være udfyldt")]
+        [EmailAddress(ErrorMessage = "Skriv venligst en gyldig email")]
+        [Display(Name = "Email")]
         [StringLength(80)]
         public string email { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "Brugernavn skal være udfyldt")]
+        [Display(Name = "Brugernavn")]
+        [StringLength(15, MinimumLength = 6, ErrorMessage = "Kodeord kan ikke være længere end 15 og kortere end 6.")]
         public string Username { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage ="Kodeord skal være udfyldt")]
+        [DataType(DataType.Password)]
+        [Display(Name ="Kodeord")]
+        [StringLength(15, MinimumLength =6, ErrorMessage ="Kodeord kan ikke være længere end 15 og kortere end 6.")]
         public string Password { get; set; }
 
-        [Required]
-        [StringLength(50)]
+        [Required(ErrorMessage = "Kodeord skal matche")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Bekræft kodeord")]
+        [StringLength(15, MinimumLength =6)]
         public string confirmpassword { get; set; }
     }
 }

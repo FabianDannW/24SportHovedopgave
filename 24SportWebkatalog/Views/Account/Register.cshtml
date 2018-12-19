@@ -11,7 +11,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>userinfo</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @if (ViewBag.message !=null)
@@ -21,14 +20,6 @@
                 </div>
             </div>
         }
-        <div class="form-group">
-            @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.UserID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
         <div class="form-group">
             @Html.LabelFor(model => model.firstname, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
