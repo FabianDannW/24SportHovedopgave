@@ -55,7 +55,7 @@ namespace _24SportWebkatalog.Controllers
                 {
                     Session["UserID"] = usr.UserID.ToString();
                     Session["Username"] = usr.Username.ToString();
-                    return RedirectToAction("Loggedin");
+                    return RedirectToAction("../Catalog/MainCatalog");
                 }
                 else
                 {
