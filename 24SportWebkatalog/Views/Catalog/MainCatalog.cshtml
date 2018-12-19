@@ -2,8 +2,6 @@
 
 @{
     ViewBag.Title = "MainCatalog";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-
 }
 
 <h2>MainCatalog</h2>
@@ -14,19 +12,16 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Id)
-        </th>   
-        <th>
             @Html.DisplayNameFor(model => model.ItemName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ImgPath)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
         </th>
         <th></th>
     </tr>
@@ -34,19 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayNameFor(model => model.Id)
+            @Html.DisplayFor(modelItem => item.ItemName)
         </td>
         <td>
-            @Html.DisplayNameFor(model => model.ItemName)
+            @Html.DisplayFor(modelItem => item.ImgPath)
         </td>
         <td>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayNameFor(model => model.ImgPath)
-        </td>
-        <td>
-            @Html.DisplayNameFor(model => model.Description)
+            @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
