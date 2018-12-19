@@ -13,7 +13,7 @@ namespace _24SportWebkatalog.Controllers
         public ActionResult MainCatalog()
         {
 
-            using (OurdbContext db = new OurdbContext())
+            using (CatalogModel db = new CatalogModel())
             {
                 //Fejl her
                 return View(db.catalogItems.ToList());

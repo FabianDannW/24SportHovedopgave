@@ -1,21 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace _24SportWebkatalog.Models
 {
-    public class CatalogItem
+    [Table("easjtestside_dk_db.catalogInfo")]
+    public partial class CatalogItem
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ItemId { get; set; }
 
-        [Required(ErrorMessage = "Please submit a name for the product")]
+        [Required]
+        [StringLength(500)]
         public string ItemName { get; set; }
 
+        [StringLength(500)]
         public string ImgPath { get; set; }
 
+        [StringLength(500)]
         public string Description { get; set; }
 
-        [Required(ErrorMessage = "Please submit a price for the product")]
-
+        
         public double Price { get; set; }
     }
 }
