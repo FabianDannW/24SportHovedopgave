@@ -7,7 +7,7 @@
 <h2>MainCatalog</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Log out", "Login")
 </p>
 <table class="table">
     <tr>
@@ -32,13 +32,15 @@
             @Html.DisplayFor(modelItem => item.ItemName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImgPath)
+            <div>
+                <img src="@String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String(item.ImgPath))" style="height:200px; width:200px;" />
+            </div>
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Price)
+            Kr. @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

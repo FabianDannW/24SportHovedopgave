@@ -17,7 +17,7 @@ namespace _24SportWebkatalog.Models
 
             modelBuilder.Entity<CatalogItem>().Property(e => e.ItemName).IsUnicode(false);
 
-            modelBuilder.Entity<CatalogItem>().Property(e => e.ImgPath).IsUnicode(false);
+            modelBuilder.Entity<CatalogItem>().Property(e => e.ImgPath);
 
             modelBuilder.Entity<CatalogItem>().Property(e => e.Price);
 

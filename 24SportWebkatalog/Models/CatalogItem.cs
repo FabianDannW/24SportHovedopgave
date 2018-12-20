@@ -15,7 +15,7 @@ namespace _24SportWebkatalog.Models
         public string ItemName { get; set; }
 
         [StringLength(500)]
-        public string ImgPath { get; set; }
+        public byte[] ImgPath { get; set; }
 
         [StringLength(500)]
         public string Description { get; set; }
