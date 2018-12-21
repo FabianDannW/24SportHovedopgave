@@ -1,29 +1,37 @@
 ﻿@model IEnumerable<_24SportWebkatalog.Models.CatalogItem>
 
-@{
-    ViewBag.Title = "MainCatalog";
-}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style type="text/css">
- 
+
         .centerlook1 {
-            padding-left: 30px;
+            
             font-weight: bold;
             width: 1000px;
         }
-      </style>
+
+        body {
+            
+            
+        }
+        .container
+        {
+            padding:0px;
+        }
+
+
+
+    </style>
 </head>
+
 
 
 <body>
@@ -32,10 +40,17 @@
         <h2>Hovedkatalog</h2>
         <h3>Herunder kan du se de varer som vi har til rådighed i butikken.</h3>
         @Html.ActionLink("Log ud", "../Account/Login")
-
     </div>
-    <div class="container">
-        <div class="panel-body">
+
+
+
+
+
+    <div class="container container" style="background-color:white">
+        <div class="
+             
+             
+             " style="height:670px;overflow-y:scroll">
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <tr>
@@ -56,18 +71,18 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>
+                            <td title="Navn af produkt">
                                 @Html.DisplayFor(modelItem => item.ItemName)
                             </td>
-                            <td>
+                            <td title="Billede af produkt">
                                 <div>
                                     <img src="@String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String(item.ImgPath))" style="height:200px; width:200px;" />
                                 </div>
                             </td>
-                            <td>
+                            <td title="Beskrivelse af hvad der kan være på medaljen samt hvad det er">
                                 @Html.DisplayFor(modelItem => item.Description)
                             </td>
-                            <td>
+                            <td title="Hvad prisen er for det enkelte produkt">
                                 Kr. @Html.DisplayFor(modelItem => item.Price)
                             </td>
                         </tr>
@@ -76,5 +91,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

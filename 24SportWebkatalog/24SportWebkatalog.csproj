@@ -175,6 +175,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\backgroundimage.png" />
+    <Content Include="Images\backgroundtest.png" />
+    <Content Include="Images\backgroundtest1.png" />
+    <Content Include="Images\bakcgroundtest2.png" />
     <Content Include="Images\BS.ME50.1.png" />
     <Content Include="Images\BS.ME50.2.png" />
     <Content Include="Images\BS.ME50.png" />
@@ -190,6 +194,7 @@
     <Content Include="Images\Medalje7.png" />
     <Content Include="Images\Medalje8.png" />
     <Content Include="Images\Medalje9.png" />
+    <Content Include="Images\medals-1622902_960_720.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
