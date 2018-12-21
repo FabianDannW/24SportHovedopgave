@@ -12,15 +12,18 @@ namespace _24SportWebkatalog.Models
 
         [Required]
         [StringLength(500)]
+        [Display(Name = "Produktnavn")]
         public string ItemName { get; set; }
 
         [StringLength(500)]
+        [Display(Name = "Billede")]
         public byte[] ImgPath { get; set; }
 
         [StringLength(500)]
+        [Display(Name = "Beskrivelse")]
         public string Description { get; set; }
 
-        
+        [Display(Name = "Pris")]
         public double Price { get; set; }
     }
 }

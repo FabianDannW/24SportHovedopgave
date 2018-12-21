@@ -23,6 +23,11 @@
                     <li>@Html.ActionLink("Login", "Login", "Account")</li>
                     <li>@Html.ActionLink("Katalog", "MainCatalog", "Catalog")</li>
                     <li>@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Indkøbskurv", "", "")</li>
+                    @if (User.IsInRole("User"))
+                    {
+                        @Html.ActionLink("Profil", "action name");
+                    }
                 </ul>
             </div>
         </div>
