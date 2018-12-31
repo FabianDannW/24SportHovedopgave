@@ -13,22 +13,16 @@
     <style type="text/css">
 
         .centerlook1 {
-            
             font-weight: bold;
             width: 1000px;
         }
 
         body {
-            
-            
-        }
-        .container
-        {
-            padding:0px;
         }
 
-
-
+        .container {
+            padding: 0px;
+        }
     </style>
 </head>
 
@@ -48,8 +42,8 @@
 
     <div class="container container" style="background-color:white">
         <div class="
-             
-             
+
+
              " style="height:670px;overflow-y:scroll">
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
@@ -74,16 +68,38 @@
                             <td title="Navn af produkt">
                                 @Html.DisplayFor(modelItem => item.ItemName)
                             </td>
-                            <td title="Billede af produkt">
-                                <div>
+                            <td title="Tryk for at forstørre">
+                                <div class="popup">
                                     <img src="@String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String(item.ImgPath))" style="height:200px; width:200px;" />
+
                                 </div>
+
+
+                                <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <img src="" class="imagepreview" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
                             </td>
                             <td title="Beskrivelse af hvad der kan være på medaljen samt hvad det er">
                                 @Html.DisplayFor(modelItem => item.Description)
                             </td>
                             <td title="Hvad prisen er for det enkelte produkt">
                                 Kr. @Html.DisplayFor(modelItem => item.Price)
+                                <a id="btn_add" href="@Url.Action("Add", "Indkøbskurv")" class="btn btn-info btn-lg">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Tilføj til kurv
+                                </a>
                             </td>
                         </tr>
                     }
@@ -94,3 +110,12 @@
 
 </body>
 </html>
+
+<script>
+$(function() {
+		$('.popup').on('click', function() {
+			$('.imagepreview').attr('src', $(this).find('img').attr('src'));
+			$('#imagemodal').modal('show');
+		});
+});
+ </script>
